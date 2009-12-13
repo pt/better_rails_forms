@@ -10,7 +10,7 @@ module BetterFormHelper
   end
 
   def better_select(form, obj, field, options, label, required=true)
-    standard_form_field(form, obj, field, label, colonize(label), required) do
+    better_form_field(form, obj, field, label, colonize(label), required) do
       form.select(field, options)
     end
   end
