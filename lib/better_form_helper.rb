@@ -34,7 +34,7 @@ module BetterFormHelper
       content_tag('span', help_text, :class => 'help-text') +
               form.label(field, label + required(required)) +
               field_content +
-              error_message_for(obj, field)
+              better_error_message_for(obj, field)
     end
   end
 
