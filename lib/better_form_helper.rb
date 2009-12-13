@@ -28,11 +28,13 @@ module BetterFormHelper
   end
 
   def better_form_field(form, obj, field, field_type, label, required=false, help_text='', options = {})
+    field_content = ( block_given? ? yield : form.send(field_type, field))
+
     content_tag('fieldset', :class => field_type) do
       content_tag('span', help_text, :class => 'help-text') +
-        form.label(field, label + required(required)) +
-        form.send(field_type, field, options) +
-        better_error_message_for(obj, field)
+              form.label(field, label + required(required)) +
+              field_content +
+              error_message_for(obj, field)
     end
   end
 
