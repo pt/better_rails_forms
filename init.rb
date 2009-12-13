@@ -1,1 +1,1 @@
-require "lib/better_form_helper"
+require "better_form_helper"
