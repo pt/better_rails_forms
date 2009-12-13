@@ -1,0 +1,1 @@
+require "lib/better_form_helper"
